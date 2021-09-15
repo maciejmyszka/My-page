@@ -1,0 +1,331 @@
+@import "colors";
+@import "animation";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-padding-top: 72px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  width: 60px;
+  height: 5px;
+  margin: 0 auto;
+  background-color: $blue-color;
+  margin-bottom: 30px;
+}
+
+.blue-text {
+  color: $blue-color;
+}
+
+.shadow-bg {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+  text-transform: uppercase;
+  z-index: 1;
+  transition: backgorund-color 0.6s;
+
+  a {
+    color: $white;
+  }
+
+  a:hover {
+    color: $blue-color;
+  }
+
+  .menu {
+    color: $white;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+
+  .active {
+    color: $blue-color;
+  }
+}
+
+header {
+  color: $white;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .hero-img {
+    position: relative;
+    height: 100vh;
+    background-image: url("../img/programming-small.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+  }
+
+  .hero-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -10;
+  }
+
+  .hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .btn-light {
+    text-transform: uppercase;
+  }
+
+  .chevron {
+    position: absolute;
+    width: 50px;
+    bottom: 20px;
+    left: calc(50% - 25px);
+    color: $white;
+  }
+}
+
+.aboutme {
+  padding-bottom: 50px;
+
+  .icon {
+    margin-top: 20px;
+    width: 30px;
+  }
+
+  .aboutme-card-title {
+    font-style: 18px;
+    text-transform: uppercase;
+  }
+
+  .aboutus-card-text {
+    font-style: 14px;
+  }
+
+  .aboutme-hover {
+    transition: all 0.3s;
+  }
+
+  .aboutme-hover:hover {
+    color: $blue-color;
+    transform: scale(1.2);
+  }
+}
+
+.aboutme-usage {
+  position: relative;
+  background-image: url("/img/bar-small.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #ddd;
+
+  .aboutme-shadow {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .container {
+    h2,
+    p {
+      color: black;
+      font-weight: 550;
+    }
+
+    .program {
+      min-height: 100%;
+      width: 80px;
+    }
+  }
+}
+
+.carousel {
+  display: none;
+}
+
+.skill {
+  .row {
+    width: 100%;
+    .card {
+      img {
+        width: 64px;
+      }
+    }
+  }
+}
+
+.contact {
+  background-image: url("/img/contact_small.jpg");
+  height: 110vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .container {
+    margin-top: 18vh;
+    form {
+      margin-top: 20%;
+
+      label {
+        width: 100%;
+
+        textarea,
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  header {
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+  .contact {
+    .container {
+      padding-top: 17%;
+      padding-left: 10%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    h1 {
+      font-size: 42px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+  .contact {
+    .container {
+      padding-top: 10%;
+      padding-left: 20%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  nav {
+    height: 72px;
+  }
+  .aboutme-usage {
+    background-image: url("/img/bar-big.jpg");
+  }
+
+  .portfolio {
+    .carousel {
+      display: block;
+    }
+
+    .carousel-item {
+      position: relative;
+      height: 550px;
+    }
+  }
+
+  .portfolio-cards {
+    display: none;
+  }
+
+  .contact {
+    background-image: url("/img/contact_big.jpg");
+
+    .container {
+      padding-left: 30%;
+      padding-top: 10%;
+
+      input,
+      textarea {
+        width: 80%;
+      }
+      .text-end {
+        text-align: start !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    .hero-img {
+      background-image: url("../img/programming-big.jpg");
+    }
+  }
+
+  .contact {
+    .container {
+      .mb-3 {
+        margin-left: 40px;
+      }
+
+      input,
+      textarea {
+        width: 60%;
+      }
+
+      .text-end {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .contact {
+    .container {
+      padding-left: 35%;
+
+      input,
+      textarea {
+        width: 60%;
+      }
+    }
+  }
+}
